@@ -12,7 +12,7 @@ public class Expense
   //------------------------
 
   //Expense Attributes
-  private String name;
+  private String reason;
   private double amountPaid;
 
   //Expense Associations
@@ -22,9 +22,9 @@ public class Expense
   // CONSTRUCTOR
   //------------------------
 
-  public Expense(String aName, double aAmountPaid, Lab aLab)
+  public Expense(String aReason, double aAmountPaid, Lab aLab)
   {
-    name = aName;
+    reason = aReason;
     amountPaid = aAmountPaid;
     boolean didAddLab = setLab(aLab);
     if (!didAddLab)
@@ -37,10 +37,10 @@ public class Expense
   // INTERFACE
   //------------------------
 
-  public boolean setName(String aName)
+  public boolean setReason(String aReason)
   {
     boolean wasSet = false;
-    name = aName;
+    reason = aReason;
     wasSet = true;
     return wasSet;
   }
@@ -53,9 +53,9 @@ public class Expense
     return wasSet;
   }
 
-  public String getName()
+  public String getReason()
   {
-    return name;
+    return reason;
   }
 
   public double getAmountPaid()
@@ -99,7 +99,7 @@ public class Expense
   {
     String outputString = "";
     return super.toString() + "["+
-            "name" + ":" + getName()+ "," +
+            "reason" + ":" + getReason()+ "," +
             "amountPaid" + ":" + getAmountPaid()+ "]" + System.getProperties().getProperty("line.separator") +
             "  " + "lab = "+(getLab()!=null?Integer.toHexString(System.identityHashCode(getLab())):"null")
      + outputString;

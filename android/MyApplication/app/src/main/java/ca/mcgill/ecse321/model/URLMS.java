@@ -78,9 +78,9 @@ public class URLMS
     return 0;
   }
 
-  public Lab addLab(String aUsername, String aPassword)
+  public Lab addLab(String aUsername, String aPassword, double aAccountBalance)
   {
-    return new Lab(aUsername, aPassword, this);
+    return new Lab(aUsername, aPassword, aAccountBalance, this);
   }
 
   public boolean addLab(Lab aLab)

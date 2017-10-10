@@ -21,6 +21,7 @@ public class Lab
   //Lab Attributes
   private String username;
   private String password;
+  private double accountBalance;
 
   //Autounique Attributes
   private int id;
@@ -36,10 +37,11 @@ public class Lab
   // CONSTRUCTOR
   //------------------------
 
-  public Lab(String aUsername, String aPassword, URLMS aURLMS)
+  public Lab(String aUsername, String aPassword, double aAccountBalance, URLMS aURLMS)
   {
     username = aUsername;
     password = aPassword;
+    accountBalance = aAccountBalance;
     id = nextId++;
     staffs = new ArrayList<Staff>();
     equipments = new ArrayList<Equipment>();
@@ -72,6 +74,14 @@ public class Lab
     return wasSet;
   }
 
+  public boolean setAccountBalance(double aAccountBalance)
+  {
+    boolean wasSet = false;
+    accountBalance = aAccountBalance;
+    wasSet = true;
+    return wasSet;
+  }
+
   public String getUsername()
   {
     return username;
@@ -80,6 +90,11 @@ public class Lab
   public String getPassword()
   {
     return password;
+  }
+
+  public double getAccountBalance()
+  {
+    return accountBalance;
   }
 
   public int getId()
@@ -433,9 +448,9 @@ public class Lab
     return 0;
   }
 
-  public Expense addExpense(String aName, double aAmountPaid)
+  public Expense addExpense(String aReason, double aAmountPaid)
   {
-    return new Expense(aName, aAmountPaid, this);
+    return new Expense(aReason, aAmountPaid, this);
   }
 
   public boolean addExpense(Expense aExpense)
@@ -561,7 +576,8 @@ public class Lab
     return super.toString() + "["+
             "id" + ":" + getId()+ "," +
             "username" + ":" + getUsername()+ "," +
-            "password" + ":" + getPassword()+ "]" + System.getProperties().getProperty("line.separator") +
+            "password" + ":" + getPassword()+ "," +
+            "accountBalance" + ":" + getAccountBalance()+ "]" + System.getProperties().getProperty("line.separator") +
             "  " + "uRLMS = "+(getURLMS()!=null?Integer.toHexString(System.identityHashCode(getURLMS())):"null")
      + outputString;
   }
