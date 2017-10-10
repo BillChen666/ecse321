@@ -1,0 +1,47 @@
+namespace ca.mcgill.ecse321.managementSystem.model;
+
+external interface Serializable {}
+
+
+
+class Staff{	
+  Role {researcher{} researchAssistant{} }
+  name;
+  autounique id;
+  String progress;
+}
+
+
+
+class Equipment{
+   name;
+   Integer quantity;
+}
+
+
+class Supply{
+  name;
+  Integer quantity;
+}
+
+class Expense{
+  reason;
+  Double amountPaid;
+}
+
+class URLMS{
+  singleton;
+   1 <@>- *Lab lab;
+}
+
+class Lab{
+  autounique id;
+  username;
+  String password;
+  Double accountBalance;
+  1 <@>- *Staff staffs;
+  1 <@>- *Equipment equipments;
+  1 <@>- *Supply supplies;
+  1 <@>- *Expense expenses;
+}
+}

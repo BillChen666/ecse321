@@ -1,0 +1,15 @@
+namespace ca.mcgill.ecse321.managementSystem.controller;
+
+import ca.mcgill.ecse321.managementSystem.model.Staff;
+import ca.mcgill.ecse321.managementSystem.model.Expense;
+import ca.mcgill.ecse321.managementSystem.model.Progress;
+import ca.mcgill.ecse321.managementSystem.model.Role;
+import ca.mcgill.ecse321.managementSystem.model.Supply;
+import ca.mcgill.ecse321.managementSystem.model.URLMS;
+import ca.mcgill.ecse321.managementSystem.persistenceLayer.PersistenceObjectStream;
+import ca.mcgill.ecse321.managementSystem.controller.InvalidInputException;
+
+
+class ManagementSystemController{
+   
+}
